@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Will you be my Valentine?</title>
+  <title>ishu will you be my valentine?</title>
 
   <!-- Confetti library -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
@@ -40,18 +40,20 @@
       z-index: 9999;
     }
 
-    /* ✅ TOP-RIGHT CORNER IMAGE */
+    /* ✅ TOP CORNER IMAGES (SAME SIZE) */
     .corner-img {
       position: fixed;
-      top: 16px;
-      right: 16px;
-      width: clamp(60px, 10vw, 110px);
+      top: 20px;
+      width: clamp(110px, 14vw, 160px); /* 🔥 bigger */
       height: auto;
       z-index: 10000;         /* above confetti canvas */
-      border-radius: 14px;
-      box-shadow: 0 10px 24px rgba(0,0,0,.14);
+      border-radius: 16px;
+      box-shadow: 0 12px 28px rgba(0,0,0,.18);
       pointer-events: none;   /* doesn't block hovering/clicking */
     }
+
+    .corner-left { left: 20px; }
+    .corner-right { right: 20px; }
 
     .card {
       width: min(720px, 92vw);
@@ -145,8 +147,11 @@
 <body>
   <canvas id="confettiCanvas"></canvas>
 
-  <!-- ✅ IMAGE IN TOP-RIGHT CORNER -->
-  <img class="corner-img" src="ishu.jpg" alt="Ishu" />
+  <!-- ✅ TOP-LEFT IMAGE (same size as top-right) -->
+  <img class="corner-img corner-left" src="left.jpg" alt="Left corner image" />
+
+  <!-- ✅ TOP-RIGHT IMAGE (bigger now) -->
+  <img class="corner-img corner-right" src="ishu.jpg" alt="Ishu" />
 
   <main class="card">
     <!-- ANIMAL WITH HEART -->
@@ -187,7 +192,6 @@
             fill="#ff7aa2"/>
     </svg>
 
-    <!-- ✅ UPDATED TEXT -->
     <h1>ishu will you be my valentine?</h1>
 
     <section class="button-zone" id="zone">
@@ -195,8 +199,7 @@
       <button id="noBtn">No</button>
     </section>
 
-    <!-- HINT -->
-    <div class="hint" id="hint">“No” seems a bit shy 😈</div>
+    <div class="hint" id="hint">I dare to you to click "No" 😈</div>
 
     <section class="result" id="result">
       <h2>YAY! 🎉</h2>
